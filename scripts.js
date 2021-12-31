@@ -1,4 +1,8 @@
 // fix the decimals like 0.1 showing as 0.0999 repeating
+// fix commas
+// disable selection ??? not possible idk jQuery or some shit
+// quick copy button done
+// disable zoom done
 
 let currentNum = 0;
 let nextNum = 0;
@@ -6,7 +10,7 @@ let activeOperator = false;
 let add = false;
 let sub = false;
 let mul = false;
-let div = false;
+let div =   false
 let activeDecimal = false;
 
 document.getElementById("display").innerHTML = 0;
@@ -19,7 +23,22 @@ function secret() {
 	}
 }
 
+function copyData() {
+	result = document.getElementById("display").textContent;
+	navigator.clipboard.writeText(result)
+}
+
+// this will implement commas
 function checkOverflow() {
+	let content = document.getElementById("display").textContent.toString();
+  console.log(content)
+  console.log('we ran')
+
+	var pattern = /(-?\d+)(\d{3})/;
+	while (pattern.test(content)) content = content.replace(pattern, "$1,$2");
+  document.getElementById("display") = content
+
+
 	// if (document.getElementById("display").innerHTML.length > 8) {
 	// 	document.getElementById("display").innerHTML = `${Number.toExponential(
 	// 		document.getElementById("display").innerHTML
@@ -97,12 +116,12 @@ function equals() {
 		let result = currentNum * nextNum;
 		document.getElementById("display").innerHTML = result;
 		currentNum = result;
-		sub = false;
+		mul = false;
 	} else if (div === true) {
 		let result = currentNum / nextNum;
 		document.getElementById("display").innerHTML = result;
 		currentNum = result;
-		sub = false;
+		div = false;
 	}
 	activeOperator = false;
 	nextNum = 0;

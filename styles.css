@@ -2,11 +2,31 @@
 	background-color: #000;
 	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
 		Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+	zoom: 110%;
+}
+
+html,
+body {
+	overflow-x: hidden;
+	overflow-y: hidden;
+}
+body {
+	position: relative;
 }
 
 #title {
 	color: white;
 	text-align: center;
+}
+
+.noselect {
+	-webkit-touch-callout: none; /* iOS Safari */
+	-webkit-user-select: none; /* Safari */
+	-khtml-user-select: none;
+	-moz-user-select: none; /* Firefox */
+	-ms-user-select: none; /* Internet Explorer/Edge */
+	user-select: none; /* Non-prefixed version, currently
+									supported by Chrome and Opera */
 }
 
 .calc {
@@ -23,7 +43,7 @@
 	width: 40px;
 	height: 40px;
 	background-color: #333333;
-	border-radius: 2rem;
+	border-radius: 3rem;
 	border: none;
 	font-size: large;
 	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
@@ -35,7 +55,7 @@
 	width: 40px;
 	height: 40px;
 	background-color: #fd9f0c;
-	border-radius: 2rem;
+	border-radius: 3rem;
 	border: none;
 	font-size: large;
 	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
@@ -47,7 +67,7 @@
 	width: 40px;
 	height: 40px;
 	background-color: #a5a5a5;
-	border-radius: 2rem;
+	border-radius: 3rem;
 	border: none;
 	font-size: large;
 	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
@@ -60,7 +80,7 @@
 	width: 160px;
 	height: 40px;
 	background-color: transparent;
-	border-radius: 2rem;
+	border-radius: 3rem;
 	border: none;
 	font-size: xx-large;
 	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
@@ -72,7 +92,7 @@
 	width: 80px;
 	height: 40px;
 	background-color: #333333;
-	border-radius: 2rem;
+	border-radius: 3rem;
 	border: none;
 	font-size: large;
 	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
@@ -82,6 +102,7 @@
 
 .button {
 	transition: 1s;
+	padding: 0;
 }
 
 .button:active {
@@ -91,4 +112,10 @@
 
 #secret {
 	display: none;
+}
+
+.selectdiv {
+	position: absolute;
+	left: 50%;
+	transform: translate(-50%, -50%);
 }

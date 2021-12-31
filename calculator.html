@@ -10,6 +10,26 @@
 	</head>
 	<body>
 		<h1 id="title">Calculator</h1>
+		<div class="selectdiv">
+			<button
+				class="button"
+				style="
+					font-size: 25%;
+					letter-spacing: -0.5px;
+					color: black;
+					text-align: center;
+					width: 120%;
+					height: 15px;
+					background-color: #a5a5a5;
+					border-radius: 0.25rem;
+					border: none;
+				"
+				onclick="copyData()"
+			>
+				copy answer
+			</button>
+		</div>
+		<div style="margin-top: 30px"></div>
 		<table class="calc">
 			<tr>
 				<td colspan="4">
@@ -17,9 +37,13 @@
 				</td>
 			</tr>
 			<tr>
-				<td><button class="standard3 button" onclick="reset()">AC</button></td>
 				<td>
-					<button class="standard3 button" onclick="switchSign()">
+					<button class="standard3 button noselect" onclick="reset()">
+						AC
+					</button>
+				</td>
+				<td>
+					<button class="standard3 button noselect" onclick="switchSign()">
 						<img
 							src="images/plusminus.png"
 							alt="/"
@@ -33,9 +57,13 @@
 						/>
 					</button>
 				</td>
-				<td><button class="standard3 button" onclick="percent()">%</button></td>
 				<td>
-					<button class="standard2 button" onclick="divide()">
+					<button class="standard3 button noselect" onclick="percent()">
+						%
+					</button>
+				</td>
+				<td>
+					<button class="standard2 button noselect" onclick="divide()">
 						<img
 							src="images/division.png"
 							alt="/"
@@ -52,16 +80,22 @@
 			</tr>
 			<tr>
 				<td>
-					<button class="standard button seven" onclick="seven()">7</button>
+					<button class="standard button seven noselect" onclick="seven()">
+						7
+					</button>
 				</td>
 				<td>
-					<button class="standard button eight" onclick="eight()">8</button>
+					<button class="standard button eight noselect" onclick="eight()">
+						8
+					</button>
 				</td>
 				<td>
-					<button class="standard button nine" onclick="nine()">9</button>
+					<button class="standard button nine noselect" onclick="nine()">
+						9
+					</button>
 				</td>
 				<td>
-					<button class="standard2 button" onclick="multiply()">
+					<button class="standard2 button noselect" onclick="multiply()">
 						<img
 							src="images/multiplication.png"
 							alt="X"
@@ -78,38 +112,76 @@
 			</tr>
 			<tr>
 				<td>
-					<button class="standard button four" onclick="four()">4</button>
+					<button class="standard button four noselect" onclick="four()">
+						4
+					</button>
 				</td>
 				<td>
-					<button class="standard button five" onclick="five()">5</button>
+					<button class="standard button five noselect" onclick="five()">
+						5
+					</button>
 				</td>
-				<td><button class="standard button six" onclick="six()">6</button></td>
 				<td>
-					<button class="standard2 button" onclick="subtract()">-</button>
+					<button class="standard button six noselect" onclick="six()">
+						6
+					</button>
+				</td>
+				<td>
+					<button class="standard2 button noselect" onclick="subtract()">
+						-
+					</button>
 				</td>
 			</tr>
 			<tr>
-				<td><button class="standard button one" onclick="one()">1</button></td>
-				<td><button class="standard button two" onclick="two()">2</button></td>
 				<td>
-					<button class="standard button three" onclick="three()">3</button>
+					<button class="standard button one noselect" onclick="one()">
+						1
+					</button>
 				</td>
 				<td>
-					<button class="standard2 button" onclick="addition()">+</button>
+					<button class="standard button two noselect" onclick="two()">
+						2
+					</button>
+				</td>
+				<td>
+					<button class="standard button three noselect" onclick="three()">
+						3
+					</button>
+				</td>
+				<td>
+					<button class="standard2 button noselect" onclick="addition()">
+						+
+					</button>
 				</td>
 			</tr>
 			<tr>
 				<td colspan="2">
-					<button class="button zero" id="span" onclick="zero()">0</button>
+					<button class="button zero noselect" id="span" onclick="zero()">
+						0
+					</button>
 				</td>
-				<td><button class="standard button" onclick="decimal()">.</button></td>
-				<td><button class="standard2 button" onclick="equals()">=</button></td>
+				<td>
+					<button class="standard button noselect" onclick="decimal()">
+						.
+					</button>
+				</td>
+				<td>
+					<button class="standard2 button noselect" onclick="equals()">
+						=
+					</button>
+				</td>
 			</tr>
 		</table>
-		<div id="secret" style="position: sticky; text-align: center; color: white">
-			you found the secret button!
+		<div style="margin-top: 4%">
+			<div
+				id="secret"
+				style="top: 50px; position: sticky; text-align: center; color: white"
+			>
+				you found the secret button!
+			</div>
 		</div>
-		<div id="title" style="position: absolute; bottom: 0px">
+
+		<div id="title" style="position: absolute; top: 0px; font-size: xx-small">
 			created by jgoon 2021
 		</div>
 		<script type="text/javascript" src="scripts.js"></script>
