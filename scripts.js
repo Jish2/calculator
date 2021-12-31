@@ -29,6 +29,9 @@ function checkOverflow() {
 }
 
 function addition() {
+	if ((activeOperator = true)) {
+		equals();
+	}
 	activeOperator = true;
 	add = true;
 	sub = false;
@@ -37,6 +40,9 @@ function addition() {
 }
 
 function subtract() {
+	if ((activeOperator = true)) {
+		equals();
+	}
 	activeOperator = true;
 	add = false;
 	sub = true;
@@ -45,6 +51,9 @@ function subtract() {
 }
 
 function multiply() {
+	if ((activeOperator = true)) {
+		equals();
+	}
 	activeOperator = true;
 	add = false;
 	sub = false;
@@ -53,6 +62,9 @@ function multiply() {
 }
 
 function divide() {
+	if ((activeOperator = true)) {
+		equals();
+	}
 	activeOperator = true;
 	add = false;
 	sub = false;
