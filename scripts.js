@@ -25,7 +25,7 @@ function secret() {
 
 function copyData() {
 	result = document.getElementById("display").textContent;
-	navigator.clipboard.writeText(result)
+	navigator.clipboard.writeText(result); 
 }
 
 // this will implement commas
