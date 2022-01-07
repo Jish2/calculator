@@ -10,7 +10,7 @@ let activeOperator = false;
 let add = false;
 let sub = false;
 let mul = false;
-let div =   false
+let div = false;
 let activeDecimal = false;
 
 document.getElementById("display").innerHTML = 0;
@@ -25,20 +25,23 @@ function secret() {
 
 function copyData() {
 	result = document.getElementById("display").textContent;
-	navigator.clipboard.writeText(result); 
+	navigator.clipboard.writeText(result);
 }
 
 // this will implement commas
 function checkOverflow() {
-	let content = document.getElementById("display").textContent.toString();
-  console.log(content)
-  console.log('we ran')
-
-	var pattern = /(-?\d+)(\d{3})/;
-	while (pattern.test(content)) content = content.replace(pattern, "$1,$2");
-  document.getElementById("display") = content
-
-
+	var parts = document
+		.getElementById("display")
+		.textContent.toString()
+		.split(".");
+	parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+	return parts.join(".");
+	// 	let content = document.getElementById("display").textContent.toString();
+	//   console.log(content)
+	//   console.log('we ran')
+	// 	var pattern = /(-?\d+)(\d{3})/;
+	// 	while (pattern.test(content)) content = content.replace(pattern, "$1,$2");
+	//   document.getElementById("display") = content
 	// if (document.getElementById("display").innerHTML.length > 8) {
 	// 	document.getElementById("display").innerHTML = `${Number.toExponential(
 	// 		document.getElementById("display").innerHTML
